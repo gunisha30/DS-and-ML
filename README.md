@@ -1,2 +1,2 @@
 # machinelearning
-Machine learning codes and projects
+Machine learning projects

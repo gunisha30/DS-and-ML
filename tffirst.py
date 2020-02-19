@@ -1,3 +1,5 @@
+Link for detailed explanation: https://www.tensorflow.org/tutorials/keras/classification
+
 import tensorflow as tf
 from tensorflow import keras
 import numpy as np

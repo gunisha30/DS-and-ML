@@ -15,7 +15,6 @@ from sklearn.naive_bayes import BernoulliNB,MultinomialNB
 from sklearn.svm import SVC
 from sklearn.grid_search import GridSearchCV
 
-
 spam_data = pd.read_csv("spam.csv",encoding = "latin1")
 spam_data.rename(columns={'v1':'label','v2':'message'},inplace = True)
 spam_data = spam_data[["label","message"]]
@@ -28,7 +27,6 @@ spam_data_value = spam_data_value.str.lower()
 X_train, X_test,y_train,y_test = train_test_split(spam_data_value,spam_data_labels,random_state=0)
 
 # spam_data.length.plot(bins=20,kind="hist")
-
 # spam_data.hist(column = "length",bins=20,by = "v1")
 # plt.show()
 # def ensureUtf(s):
@@ -43,7 +41,6 @@ spam_wc = WordCloud(width=512,height=512).generate(spam_words)
 plt.axis('off')
 plt.tight_layout(pad=0)
 plt.imshow(spam_wc)
-
 plt.figure()
 
 non_spam_words = ' '.join(list(spam_data[spam_data['label']==0]["message"]))

@@ -71,7 +71,7 @@ print(auc_score)
 with open('spam_detector.pkl','wb') as fout:
     cPickle.dump(spam_detector,fout)
 spam_detector_reloaded = cPickle.load(open('spam_detector.pkl','rb'))
-# input_file = sys.argv[1]
+input_file = sys.argv[1]
 # i = list(pd.read_table(input_file))
 # print(spam_detector.predict(vect.transform(i)))
 d = list(pd.read_table("test.txt"))

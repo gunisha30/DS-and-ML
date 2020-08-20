@@ -17,24 +17,17 @@ df.drop(columns=['Sponsored'],inplace=True)
 #null=df[df['Salary']=='None']
  
 #s=df.iloc[34][3]
-#print(s)
 #stnew=st.replace('â','')
-#print(type(st[0]))
-
 #st=re.sub(r'a year$',"",st) #replace a year with null string
 #st= re.sub(r'a month$',"",st)
 
 
 #l=st.split('-')
-#print(l)
 #for i in range(0,len(l)):
  #   l[i]=re.sub("\D", "",l[i]) #\D is used to remove everything except digits
-#print(l)
 #s="-".join(l)
-#print(s)
 
 #print(sum(df['Salary'].isnull()))
-#def solve (s):
     
 def solve(s):
     x=re.findall("a month$",s)

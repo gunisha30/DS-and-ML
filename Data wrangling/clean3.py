@@ -9,7 +9,7 @@ df['rating'].astype('float')
 df.rename(columns={'cusine_category':'cuisine','cusine type':'cuisine_cat'},inplace= True)
 df.replace('CafÃ©','Cafe',inplace=True)
 unique_cuisines=list(df.cuisine_cat.unique()) 
-df2=df[['rating','price']]
+df2=df[['cuisine_cat','rating']]
 for i in unique_cuisines:
     df3=df2.where(df['cuisine_cat']==i)
     print(df3['rating'].mean(skipna= True))
@@ -22,7 +22,7 @@ for i in unique_cuisines:
 #df3.drop(df['cuisine_cat']=='none', inplace=True)
 #df1=df[df['rating'].isnull()]
 #df2.dropna(inplace=True)
-#df2.to_csv('C:/Users/hp1/Documents/regex project/integrated cities/kota2.csv')
+df2.to_csv('C:/Users/hp1/Documents/regex project/integrated cities/kota2.csv')
 #
 #print(df.index)
 #print(df.dtypes)

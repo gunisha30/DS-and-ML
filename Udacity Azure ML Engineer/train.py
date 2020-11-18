@@ -14,11 +14,11 @@ from azureml.data.dataset_factory import TabularDatasetFactory
 ds = pd.read_csv("https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv")
 
 def clean_data(data):
-    # Dict for cleaning data
+    #Dict for cleaning data
     months = {"jan":1, "feb":2, "mar":3, "apr":4, "may":5, "jun":6, "jul":7, "aug":8, "sep":9, "oct":10, "nov":11, "dec":12}
     weekdays = {"mon":1, "tue":2, "wed":3, "thu":4, "fri":5, "sat":6, "sun":7}
 
-    # Clean and one hot encode data
+    #Clean and one hot encode data
     x_df = data.to_pandas_dataframe().dropna()
     jobs = pd.get_dummies(x_df.job, prefix="job")
     x_df.drop("job", inplace=True, axis=1)
@@ -42,14 +42,14 @@ def clean_data(data):
 
 x, y = clean_data(ds)
 
-# TODO: Split data into train and test sets.
+#TODO: Split data into train and test sets.
 xtrain,xtest,ytrain,ytest=train_test_split(x,y,test_size=0.33)
 
 
 run = Run.get_context()
 
 def main():
-    # Add arguments to script
+    #Add arguments to script
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--C', type=float, default=1.0, help="Inverse of regularization strength. Smaller values cause stronger regularization")
